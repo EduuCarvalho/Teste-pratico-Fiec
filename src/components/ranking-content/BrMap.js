@@ -6,7 +6,6 @@ import styled from "styled-components";
 
 export default function BrMap() {
   const [svg, setSvg] = useState(null);
-  const [tooltip, setTooltip] = useState(null);
   const svgRef = useRef();
   const tooltipRef = useRef();
   const [state,setState] = useState()
@@ -64,13 +63,16 @@ export default function BrMap() {
   }, []);
 
   return (
-    <>
+    <MapContainer>
       <svg ref={svgRef} />
       <Tool ref={tooltipRef}>Estado: {state}<br />População: {stateData}</Tool>
-    </>
+    </MapContainer>
   );
 }
 
+const MapContainer = styled.div`
+  background-color:lightcoral;
+`
 
 const Tool = styled.div`
   position: absolute;

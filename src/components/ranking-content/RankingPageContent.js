@@ -1,7 +1,7 @@
 import styled from "styled-components";
-
 import TopBar from "./TopBar";
 import BrMap from "./BrMap";
+import GraphicBars from "./GraphicBars";
 
 
 export default function RankingPageContent() {
@@ -11,7 +11,7 @@ export default function RankingPageContent() {
         <TopBar/>
         <Content>
         <BrMap/>
-        <>OLAAasdsadA</>
+        <GraphicBars/>
         </Content>
       </PageContentTopBarContainer>
     );
