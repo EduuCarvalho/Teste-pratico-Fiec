@@ -18,7 +18,7 @@ export default function TopBar({ setIndicator, indicator }) {
   return (
     <TopBarContainer>
       <TittleBox>
-        <BsBarChartFill size="25px" color="#1a428a" />
+        <BsBarChartFill size="24px" color="#1a428a" />
         <h1>Ranking</h1>
       </TittleBox>
       <ListButton onClick={() => setShowListContainer(!showListContainer)}>
