@@ -65,18 +65,15 @@ const TittleBox = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #e0e3f7;
   width: 140px;
   height: 40px;
   margin-left: 100px;
-  padding: 5px;
+  padding: 2px;
 
   h1 {
     font-family: "roboto", sans-serif;
     font-weight: 700;
-    font-size: 15px;
-    color: #1a428a;
-    background-color: #e0e3f7;
+    font-size: 20px; 
   }
 `;
 const ListButton = styled.button`

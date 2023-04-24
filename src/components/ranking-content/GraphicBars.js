@@ -66,14 +66,15 @@ const GraphicContainer = styled.div`
     display:flex;
     align-items:center;
     justify-content:center;
-    width:100%;
+    width:800px;
     
 `
 
 const GraphicBox = styled.div `
+
     background-color:#FFFFFF;
-    width:75%;
-    height:85%;
+    width:600px;
+    height:700px;
     border-radius:20px;
     box-shadow: 2px 2px 10px #888888;
 `
