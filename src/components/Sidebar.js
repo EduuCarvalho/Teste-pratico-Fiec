@@ -5,6 +5,9 @@ import logoP2i from "../assets/images/logo-p2i.png";
 import logoObservatorio from "../assets/images/logo-observatorio.png";
 import logoFIEC from "../assets/images/logo-fiec.png";
 import logoABDI from "../assets/images/logo-ABDI.png";
+import {BsBarChartFill} from  "react-icons/bs";
+import {BiGitCompare} from "react-icons/bi";
+import {RiNewspaperFill} from "react-icons/ri"
 
 export default function SideBar({filter, setFilter}) {
     return (
@@ -20,7 +23,8 @@ export default function SideBar({filter, setFilter}) {
             }}
             background={filter === "ranking" && "#FFFFFF"}
             color={filter === "ranking" ? "#1a428a" : "#FFFFFF"}
-          >
+          > 
+            <BsBarChartFill/>
             <p>Ranking</p>
           </FilterOption>
           <FilterOption
@@ -30,6 +34,7 @@ export default function SideBar({filter, setFilter}) {
             background={filter === "perfil" && "#FFFFFF"}
             color={filter === "perfil" ? "#1a428a" : "#FFFFFF"}
           >
+            <RiNewspaperFill/>
             <p>Perfil</p>
           </FilterOption>
           <FilterOption
@@ -39,6 +44,7 @@ export default function SideBar({filter, setFilter}) {
             background={filter === "compare" && "#FFFFFF"}
             color={filter === "compare" ? "#1a428a" : "#FFFFFF"}
           >
+            <BiGitCompare/>
             <p>Compare</p>
           </FilterOption>
         </SideButtonContainer>
@@ -97,6 +103,7 @@ const FilterOption = styled.div`
     font-family:"roboto",sans-serif;
     font-weight:700;
     font-size:18px;
+    margin-left:5px;
   }
 `;
 
@@ -116,4 +123,5 @@ const BottomLogoContainer = styled.div`
     width:100%;
   }
 `;
+
 

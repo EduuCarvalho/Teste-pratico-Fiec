@@ -6,7 +6,7 @@ import { useState } from "react";
 
 
 export default function RankingPageContent() {
-  const [indicator,setIndicator] = useState("Indice FIEC")
+  const [indicator,setIndicator] = useState("Índice FIEC")
     return(
         <PageContentTopBarContainer>
     

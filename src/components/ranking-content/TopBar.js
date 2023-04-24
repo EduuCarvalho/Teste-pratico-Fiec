@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { MdArrowDropUp, MdArrowDropDown } from "react-icons/md";
+import {BsBarChartFill} from  "react-icons/bs";
+
 export default function TopBar({ setIndicator, indicator }) {
+
   const [indexList, setIndexList] = useState([
-    "Indice FIEC",
-    "Capacidade",
+    "Índice FIEC",
+    "Índice de Capacidade",
     "Infraestrutura",
   ]);
 
@@ -12,9 +15,11 @@ export default function TopBar({ setIndicator, indicator }) {
   const handleOptionChange = (event) => {
     setIndicator(event.target.value);
   };
+
   return (
     <TopBarContainer>
       <TittleBox>
+        <BsBarChartFill size="25px" color="#1a428a"/>
         <h1>Ranking</h1>
       </TittleBox>
       <ListButton onClick={() => setShowListContainer(!showListContainer)}>
@@ -55,18 +60,20 @@ const TopBarContainer = styled.div`
 
 const TittleBox = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   background-color: #e0e3f7;
   width: 120px;
   height: 40px;
   margin-left: 100px;
+  padding:5px;
 
   h1 {
     font-family: "roboto", sans-serif;
     font-weight: 700;
-    font-size: 15px;
+    font-size: 20px;
     color: #1a428a;
+    background-color: #e0e3f7;
   }
 `;
 const ListButton = styled.button`
