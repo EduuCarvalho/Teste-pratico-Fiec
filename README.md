@@ -1,5 +1,9 @@
 # Projeto de Visualização de Dados do Brasil com React.js e d3.js
 
+
+![Captura de tela de 2023-04-24 14-24-41](https://user-images.githubusercontent.com/107449234/234099798-88cd32dc-06fc-42ab-b708-243c4ed85568.png)
+
+
 Este projeto é um aplicativo web que utiliza as bibliotecas React.js e d3.js para exibir visualizações de dados sobre o Brasil. O objetivo principal é fornecer informações interessantes e úteis sobre o país, utilizando dados fictícios para a criação de gráficos e mapas interativos.
 
 ## Tecnologias Utilizadas
