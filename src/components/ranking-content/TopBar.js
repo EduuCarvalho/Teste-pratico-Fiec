@@ -74,7 +74,7 @@ const TittleBox = styled.div`
   h1 {
     font-family: "roboto", sans-serif;
     font-weight: 700;
-    font-size: 20px;
+    font-size: 15px;
     color: #1a428a;
     background-color: #e0e3f7;
   }
