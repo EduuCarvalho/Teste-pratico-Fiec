@@ -14,7 +14,7 @@ Para rodar o projeto é necessário ter o Docker instalado em sua máquina. Siga
 
 `+`Clone o repositório para sua máquina:
 
-`git clone https://github.com/seu-usuario/nome-do-projeto.git`
+```git clone https://github.com/seu-usuario/nome-do-projeto.git```
 
 `+`Acesse a pasta do projeto:
 
