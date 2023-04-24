@@ -16,7 +16,7 @@ export default function PageContent() {
 
       const color = d3
       .scaleSequential()
-      .domain([0, d3.max(Object.values(data).map(d => d.pop))])
+      .domain([0, d3.max(Object.values(data).map(d => d.indiceFIEC))])
       .interpolator(d3.interpolateBlues);
 
       const svg = d3
@@ -36,8 +36,8 @@ export default function PageContent() {
       .data(brazil_geo.features)
       .join("path")
       .attr("d", path)
-      .attr("fill", (d) => color(data[d.id].pop))
-      .attr("stroke", "#333");
+      .attr("fill", (d) => color(data[d.id].indiceFIEC*1.5))
+      .attr("stroke", "#fff");
 
     setSvg(svg);
   }, []);
