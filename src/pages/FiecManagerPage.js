@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { useState } from "react";
 import SideBar from "../components/Sidebar";
-import PageContent from "../components/PageContent"
+import RankingPageContent from "../components/ranking-content/RankingPageContent";
 
 
 export function FiecManagerPage() {
@@ -11,7 +11,7 @@ export function FiecManagerPage() {
   return (
     <MainPage>
       <SideBar filter={filter} setFilter={setFilter} />
-      <PageContent/>
+      <RankingPageContent/>
     </MainPage>
   );
 }
