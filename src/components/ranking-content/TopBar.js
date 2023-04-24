@@ -66,7 +66,7 @@ const TittleBox = styled.div`
   justify-content: space-between;
   align-items: center;
   background-color: #e0e3f7;
-  width: 120px;
+  width: 140px;
   height: 40px;
   margin-left: 100px;
   padding: 5px;
