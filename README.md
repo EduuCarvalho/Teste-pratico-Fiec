@@ -35,5 +35,5 @@ Para rodar o projeto é necessário ter o Docker instalado em sua máquina. Siga
 * Mapa do Brasil: Exibe um mapa interativo do Brasil, com a possibilidade de seleção de estados e exibição de informações sobre cada um deles.
 * Gráfico de Barras: Exibe um gráfico de barras com os dados fictícios.
 
-### `npm test`
+
 
