@@ -1,70 +1,39 @@
-# Getting Started with Create React App
+# Projeto de Visualização de Dados do Brasil com React.js e d3.js
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este projeto é um aplicativo web que utiliza as bibliotecas React.js e d3.js para exibir visualizações de dados sobre o Brasil. O objetivo principal é fornecer informações interessantes e úteis sobre o país, utilizando dados fictícios para a criação de gráficos e mapas interativos.
 
-## Available Scripts
+## Tecnologias Utilizadas
 
-In the project directory, you can run:
+`*`React.js: Uma biblioteca JavaScript de código aberto para criar interfaces de usuário
+`*`d3.js: Uma biblioteca JavaScript para visualização de dados interativos em páginas web
+`*`Docker: Uma plataforma para desenvolvimento, envio e execução de aplicativos em contêineres
 
-### `npm start`
+## Como rodar o projeto
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Para rodar o projeto é necessário ter o Docker instalado em sua máquina. Siga os passos abaixo:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+`+`Clone o repositório para sua máquina:
+
+`git clone https://github.com/seu-usuario/nome-do-projeto.git`
+
+`+`Acesse a pasta do projeto:
+
+`cd nome-do-projeto`
+
+`+`Construa a imagem do Docker:
+
+`docker build -t nome-da-imagem .`
+
+`+`Inicie o container:
+
+`docker run -p 3000:3000 nome-da-imagem`
+
+`+`Abra o navegador e acesse a aplicação em http://localhost:3000.
+
+##Funcionalidades
+
+`*`Mapa do Brasil: Exibe um mapa interativo do Brasil, com a possibilidade de seleção de estados e exibição de informações sobre cada um deles.
+`*`Gráfico de Barras: Exibe um gráfico de barras com os dados fictícios.
 
 ### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
