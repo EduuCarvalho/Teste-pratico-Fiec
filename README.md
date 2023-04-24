@@ -1,70 +1,49 @@
-# Getting Started with Create React App
+# Projeto de Visualização de Dados do Brasil com React.js e d3.js
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+![Captura de tela de 2023-04-24 14-23-24](https://user-images.githubusercontent.com/107449234/234100457-698972ff-c54a-4baf-a465-dc3816bcd6ad.png)
 
-In the project directory, you can run:
 
-### `npm start`
+Este projeto é um aplicativo web que utiliza as bibliotecas React.js e d3.js para exibir visualizações de dados sobre o Brasil. O objetivo principal é fornecer informações interessantes e úteis sobre o país, utilizando dados fictícios para a criação de gráficos e mapas interativos.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Tecnologias Utilizadas
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+* React.js: Uma biblioteca JavaScript de código aberto para criar interfaces de usuário
+* d3.js: Uma biblioteca JavaScript para visualização de dados interativos em páginas web
+* Docker: Uma plataforma para desenvolvimento, envio e execução de aplicativos em contêineres
 
-### `npm test`
+## Como rodar o projeto
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Para rodar o projeto é necessário ter o Docker instalado em sua máquina. Siga os passos abaixo:
 
-### `npm run build`
+1. Clone o repositório para sua máquina:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```git clone https://github.com/seu-usuario/nome-do-projeto.git```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. Acesse a pasta do projeto:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+`cd nome-do-projeto`
 
-### `npm run eject`
+3. Construa a imagem do Docker:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+`docker build -t nome-da-imagem .`
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+4. Inicie o container:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+`docker run -p 3000:3000 nome-da-imagem`
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+5. Abra o navegador e acesse a aplicação em http://localhost:3000.
 
-## Learn More
+##Funcionalidades
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+* Mapa do Brasil: Exibe um mapa interativo do Brasil, com a possibilidade de seleção de estados e exibição de informações sobre cada um deles.
+* Gráfico de Barras: Exibe um gráfico de barras com os dados fictícios.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+![d3.js](https://img.shields.io/badge/d3.js-%23F9A03C.svg?style=for-the-badge&logo=d3.js&logoColor=white)
+![Styled Components](https://img.shields.io/badge/styled--components-%23DB7093.svg?style=for-the-badge&logo=styled-components&logoColor=white)
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
