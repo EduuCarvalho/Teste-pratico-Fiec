@@ -12,19 +12,19 @@ export default function BrMap() {
   const [stateData,setStateData] = useState(null);
   useEffect(() => {
       const width = 800;
-      const height = 600;
+      const height = 700;
 
     // Define a escala de cores
     const color = d3
       .scaleSequential()
       .domain([0, d3.max(Object.values(data).map((d) => d.indiceFIEC))])
-      .interpolator(d3.interpolateBlues);
+      .range(["#B3D9FF", "#1c4483"]);
 
     // Seleciona o elemento svg e define suas dimensões
     const svg = d3.select(svgRef.current).attr("width", width).attr("height", height);
 
     // Define a projeção geográfica a ser usada e seu centro
-    const projection = d3.geoMercator().center([-45, -10]).scale(750);
+    const projection = d3.geoMercator().center([-52, -7]).scale(900);
 
     // Cria um caminho (path) baseado na projeção
     const path = d3.geoPath().projection(projection);
@@ -35,7 +35,7 @@ export default function BrMap() {
       .data(brazil_geo.features)
       .join("path")
       .attr("d", path)
-      .attr("fill", (d) => color(data[d.id].indiceFIEC*2))
+      .attr("fill", (d) => color(data[d.id].indiceFIEC*1.5))
       .attr("stroke", "#fff")
       .on("mouseover", (event, d) => {
         setStateData(data[d.id].indiceFIEC)
@@ -71,7 +71,7 @@ export default function BrMap() {
 }
 
 const MapContainer = styled.div`
-  background-color:lightcoral;
+
 `
 
 const Tool = styled.div`

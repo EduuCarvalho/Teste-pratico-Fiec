@@ -11,11 +11,11 @@ export default function GraphicBars () {
       const svg = d3.select(svgRef.current);
   
       const margin = { top: 20, right: 20, bottom: 20, left: 60 };
-      const width = 600 - margin.left - margin.right;
-      const height = 400 - margin.top - margin.bottom;
+      const width = 500 - margin.left - margin.right;
+      const height = 600 - margin.top - margin.bottom;
   
       const x = d3.scaleLinear().range([0, width]);
-      const y = d3.scaleBand().range([height, 0]).padding(0.1);
+      const y = d3.scaleBand().range([height, 0]).padding(0.2);
   
       const maxIndex = d3.max(Object.values(data), (d) => d.indiceFIEC);
       const minIndex = d3.min(Object.values(data), (d) => d.indiceFIEC);
@@ -23,7 +23,7 @@ export default function GraphicBars () {
       const color = d3
         .scaleLinear()
         .domain([minIndex, maxIndex])
-        .range(["#B3D9FF", "#0066CC"]);
+        .range(["#B3D9FF", "#1c4483"]);
   
       const xAxis = d3.axisBottom().scale(x);
       const yAxis = d3.axisLeft().scale(y);
@@ -51,17 +51,28 @@ export default function GraphicBars () {
         .attr("y", (d) => y(d[0]))
         .attr("height", y.bandwidth())
         .attr("width", (d) => x(d[1].indiceFIEC))
-        .attr("fill", (d) => color(d[1].indiceFIEC));
+        .attr("fill", (d) => color(d[1].indiceFIEC *1.5));
     }, [data]);
-    return(<GraphicContainer>
-      <div className="chart-container">
-      <svg ref={svgRef} width="600" height="400"></svg>
-    </div>
-
+    return(
+    <GraphicContainer>
+        <GraphicBox>
+            <svg ref={svgRef} width="500" height="700"></svg>
+        </GraphicBox>
     </GraphicContainer>);
 }
 
 const GraphicContainer = styled.div`
-    background-color:lightcyan;
+    display:flex;
+    align-items:center;
+    justify-content:center;
     width:100%;
+    
+`
+
+const GraphicBox = styled.div `
+    background-color:#FFFFFF;
+    width:75%;
+    height:85%;
+    border-radius:20px;
+    box-shadow: 2px 2px 10px #888888;
 `
