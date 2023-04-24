@@ -80,7 +80,7 @@ const SideButtonContainer = styled.div`
   width: 100%;
 `;
 const FilterOption = styled.div`
-  margin-top: 30px;
+  margin-top: 25px;
   display: flex;
   justify-content:center;
   align-items: center;
@@ -96,7 +96,7 @@ const FilterOption = styled.div`
   p {
     font-family:"roboto",sans-serif;
     font-weight:700;
-    font-size:20px;
+    font-size:18px;
   }
 `;
 
