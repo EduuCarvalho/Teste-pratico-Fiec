@@ -6,12 +6,11 @@ import RankingPageContent from "../components/ranking-content/RankingPageContent
 
 export function FiecManagerPage() {
   const [filter, setFilter] = useState("ranking");
-
-  
+  const [indicator,setIndicator] = useState("indiceFIEC")
   return (
     <MainPage>
       <SideBar filter={filter} setFilter={setFilter} />
-      <RankingPageContent/>
+      <RankingPageContent indicator = {indicator} setIndicator={setIndicator}/>
     </MainPage>
   );
 }

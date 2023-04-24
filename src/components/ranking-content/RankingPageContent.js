@@ -4,12 +4,12 @@ import BrMap from "./BrMap";
 import GraphicBars from "./GraphicBars";
 
 
-export default function RankingPageContent() {
+export default function RankingPageContent({indicator,setIndicator}) {
 
     return(
         <PageContentTopBarContainer>
-        <TopBar/>
-        <Content>
+        <TopBar setIndicator={setIndicator}/>
+        <Content indicator={indicator}>
         <BrMap/>
         <GraphicBars/>
         </Content>
