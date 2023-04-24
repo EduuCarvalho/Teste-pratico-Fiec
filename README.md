@@ -4,9 +4,9 @@ Este projeto é um aplicativo web que utiliza as bibliotecas React.js e d3.js pa
 
 ## Tecnologias Utilizadas
 
-`*`React.js: Uma biblioteca JavaScript de código aberto para criar interfaces de usuário
-`*`d3.js: Uma biblioteca JavaScript para visualização de dados interativos em páginas web
-`*`Docker: Uma plataforma para desenvolvimento, envio e execução de aplicativos em contêineres
+(*)React.js: Uma biblioteca JavaScript de código aberto para criar interfaces de usuário
+(*)d3.js: Uma biblioteca JavaScript para visualização de dados interativos em páginas web
+(*)Docker: Uma plataforma para desenvolvimento, envio e execução de aplicativos em contêineres
 
 ## Como rodar o projeto
 
