@@ -3,13 +3,14 @@ import React, { useEffect, useRef } from "react";
 import * as d3 from "d3";
 import data from "./data.json"
 
-export default function GraphicBars () {
+export default function GraphicBars ({indicator}) {
 
     const svgRef = useRef();
 
     useEffect(() => {
+        
       const svg = d3.select(svgRef.current);
-  
+      svg.selectAll("*").remove(); // para não renderizar um em cima do outro, seleciona todos o svg e remove
       const margin = { top: 20, right: 20, bottom: 20, left: 60 };
       const width = 500 - margin.left - margin.right;
       const height = 600 - margin.top - margin.bottom;
@@ -17,8 +18,8 @@ export default function GraphicBars () {
       const x = d3.scaleLinear().range([0, width]);
       const y = d3.scaleBand().range([height, 0]).padding(0.2);
   
-      const maxIndex = d3.max(Object.values(data), (d) => d.indiceFIEC);
-      const minIndex = d3.min(Object.values(data), (d) => d.indiceFIEC);
+      const maxIndex = d3.max(Object.values(data), (d) => d[indicator]);
+      const minIndex = d3.min(Object.values(data), (d) => d[indicator]);
   
       const color = d3
         .scaleLinear()
@@ -33,7 +34,7 @@ export default function GraphicBars () {
         .attr("transform", `translate(${margin.left}, ${margin.top})`);
   
       x.domain([0, maxIndex]);
-      y.domain(Object.keys(data).sort((a, b) => data[a].indiceFIEC - data[b].indiceFIEC));
+      y.domain(Object.keys(data).sort((a, b) => data[a][indicator] - data[b][indicator]));
   
       g.append("g")
         .attr("class", "axis-x")
@@ -50,9 +51,9 @@ export default function GraphicBars () {
         .attr("x", 0)
         .attr("y", (d) => y(d[0]))
         .attr("height", y.bandwidth())
-        .attr("width", (d) => x(d[1].indiceFIEC))
-        .attr("fill", (d) => color(d[1].indiceFIEC *1.5));
-    }, [data]);
+        .attr("width", (d) => x(d[1][indicator]))
+        .attr("fill", (d) => color(d[1][indicator] *1.5));
+    }, [indicator]);
     return(
     <GraphicContainer>
         <GraphicBox>

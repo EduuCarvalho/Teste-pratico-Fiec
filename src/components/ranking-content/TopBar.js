@@ -1,26 +1,46 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-
-export default function TopBar({indicator}) {
+import { MdArrowDropUp, MdArrowDropDown } from "react-icons/md";
+export default function TopBar({ setIndicator, indicator }) {
   const [indexList, setIndexList] = useState([
-    "indiceFIEC",
-    "capacidade",
-    "infraestrutura",
+    "Indice FIEC",
+    "Capacidade",
+    "Infraestrutura",
   ]);
 
   const [showListContainer, setShowListContainer] = useState(false);
-
+  const handleOptionChange = (event) => {
+    setIndicator(event.target.value);
+  };
   return (
     <TopBarContainer>
       <TittleBox>
         <h1>Ranking</h1>
       </TittleBox>
-      <ListButton onClick={() =>setShowListContainer(!showListContainer)}>Selecione um indicador 
-       {showListContainer && <ListContainer>
-       { indexList.map((i)=> {return <input type="radio" ket={i} name={i} value={i}/>})}
-        </ListContainer>} 
+      <ListButton onClick={() => setShowListContainer(!showListContainer)}>
+        Selecione um indicador
+        {showListContainer?<MdArrowDropUp size="30px" />:<MdArrowDropDown size="30px" />}
       </ListButton>
-     
+
+      {showListContainer && (
+        <ListContainer>
+          {indexList.map((i) => {
+            return (
+              <div key={i}>
+                <input
+                  type="radio"
+                  id={i}
+                  name="option"
+                  value={i}
+                  checked={indicator === i}
+                  onChange={handleOptionChange}
+                />
+                <label htmlFor={i}>{i}</label>
+              </div>
+            );
+          })}
+        </ListContainer>
+      )}
     </TopBarContainer>
   );
 }
@@ -30,7 +50,7 @@ const TopBarContainer = styled.div`
   align-items: center;
   background-color: #ffffff;
   height: 90px;
- 
+  position: relative;
 `;
 
 const TittleBox = styled.div`
@@ -50,6 +70,8 @@ const TittleBox = styled.div`
   }
 `;
 const ListButton = styled.button`
+  display: flex;
+  align-items: center;
   margin-left: 30px;
   height: 40px;
   padding: 10px;
@@ -57,7 +79,7 @@ const ListButton = styled.button`
   border: none;
   background-color: #4169e1;
   color: #ffffff;
-  position: relative;
+  cursor: pointer;
 `;
 
 const ListContainer = styled.div`
@@ -66,10 +88,13 @@ const ListContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 120px;
-  background-color: lightcoral;
+  background-color: #ffffff;
   padding: 20px;
-  top: 45px;
-  right:3px;
-  width:155px;
-  padding:40px 0 40px 0;
+  top: 65px;
+  left: 250px;
+  width: 200px;
+  padding: 40px 0 40px 0;
+  input{
+    margin:5px 5px 0 0;
+  }
 `;

@@ -4,20 +4,22 @@ import brazil_geo from "./brazil_geo.json";
 import data from "./data.json";
 import styled from "styled-components";
 
-export default function BrMap() {
+export default function BrMap({indicator}) {
+ 
   const [svg, setSvg] = useState(null);
   const svgRef = useRef();
   const tooltipRef = useRef();
-  const [state,setState] = useState()
-  const [stateData,setStateData] = useState(null);
+  const [state, setState] = useState();
+  const [stateData, setStateData] = useState(null);
+  
   useEffect(() => {
-      const width = 800;
-      const height = 700;
+    const width = 800;
+    const height = 700;
 
     // Define a escala de cores
     const color = d3
       .scaleSequential()
-      .domain([0, d3.max(Object.values(data).map((d) => d.indiceFIEC))])
+      .domain([0, d3.max(Object.values(data).map((d) => d[indicator]))])
       .range(["#B3D9FF", "#1c4483"]);
 
     // Seleciona o elemento svg e define suas dimensões
@@ -35,11 +37,11 @@ export default function BrMap() {
       .data(brazil_geo.features)
       .join("path")
       .attr("d", path)
-      .attr("fill", (d) => color(data[d.id].indiceFIEC*1.5))
+      .attr("fill", (d) => color(data[d.id][indicator] * 1.5))
       .attr("stroke", "#fff")
       .on("mouseover", (event, d) => {
-        setStateData(data[d.id].indiceFIEC)
-        setState(d.properties.name)
+        setStateData(data[d.id][indicator]);
+        setState(d.properties.name);
         const tooltip = tooltipRef.current;
         tooltip.style.visibility = "visible";
         tooltip.style.opacity = 1;
@@ -57,19 +59,22 @@ export default function BrMap() {
         const tooltip = tooltipRef.current;
         tooltip.style.visibility = "hidden";
         tooltip.style.opacity = 0;
-      })
+      });
 
     setSvg(svg);
-  }, []);
+  }, [data, indicator]);
 
   return (
     <MapContainer>
       <svg ref={svgRef} />
-      <Tool ref={tooltipRef}>Estado: {state}<br />População: {stateData}</Tool>
+      <Tool ref={tooltipRef}>
+        Estado: {state}
+        <br />
+        {indicator}: {stateData}
+      </Tool>
     </MapContainer>
   );
 }
-
 const MapContainer = styled.div`
 
 `
