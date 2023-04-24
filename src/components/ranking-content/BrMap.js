@@ -4,34 +4,31 @@ import brazil_geo from "./brazil_geo.json";
 import data from "./data.json";
 import styled from "styled-components";
 
-export default function BrMap({indicator}) {
- 
+export default function BrMap({ indicator }) {
   const [svg, setSvg] = useState(null);
   const svgRef = useRef();
   const tooltipRef = useRef();
   const [state, setState] = useState();
   const [stateData, setStateData] = useState(null);
-  
+
   useEffect(() => {
     const width = 800;
     const height = 700;
 
-    // Define a escala de cores
     const color = d3
       .scaleSequential()
       .domain([0, d3.max(Object.values(data).map((d) => d[indicator]))])
       .range(["#B3D9FF", "#1c4483"]);
 
-    // Seleciona o elemento svg e define suas dimensões
-    const svg = d3.select(svgRef.current).attr("width", width).attr("height", height);
+    const svg = d3
+      .select(svgRef.current)
+      .attr("width", width)
+      .attr("height", height);
 
-    // Define a projeção geográfica a ser usada e seu centro
     const projection = d3.geoMercator().center([-52, -7]).scale(900);
 
-    // Cria um caminho (path) baseado na projeção
     const path = d3.geoPath().projection(projection);
 
-    // Desenha os estados do Brasil
     svg
       .selectAll("path")
       .data(brazil_geo.features)
@@ -49,7 +46,6 @@ export default function BrMap({indicator}) {
         tooltip.style.left = `${event.pageX}px`;
       })
       .on("mousemove", (event, d) => {
-        // Atualiza a posição do tooltip quando o mouse se move
         const tooltip = d3.select(tooltipRef.current);
         tooltip
           .style("top", `${event.pageY}px`)
@@ -75,9 +71,7 @@ export default function BrMap({indicator}) {
     </MapContainer>
   );
 }
-const MapContainer = styled.div`
-
-`
+const MapContainer = styled.div``;
 
 const Tool = styled.div`
   position: absolute;
@@ -85,4 +79,4 @@ const Tool = styled.div`
   border: 1px solid black;
   padding: 5px;
   opacity: 0;
-`
+`;
